@@ -9,7 +9,7 @@ export default function Question({ onSelectAnswer, onSkipAnswer, questionIndex }
     isCorrect: null,
   });
 
-  let timer = 10000;
+  let timer = 100000;
 
   if (answer.selectedAnswer) {
     timer = 1000;
@@ -47,6 +47,9 @@ export default function Question({ onSelectAnswer, onSkipAnswer, questionIndex }
 
   return (
     <div id="question">
+      <div id="counter">
+        {questionIndex + 1} / {QUESTIONS.length}
+      </div>
       <QuestionTimer
         key={timer}
         timeout={timer}
